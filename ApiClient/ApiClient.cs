@@ -28,7 +28,7 @@ namespace ApiClient
 
                 if(!response.IsSuccessStatusCode)
                 {
-                    throw new WebException($"Http status {response.StatusCode}");
+                    throw new HttpRequestException($"Http status {response.StatusCode}");
                 }        
 
                  return await response.Content.ReadAsStringAsync();
@@ -53,7 +53,7 @@ namespace ApiClient
 
                 if(!response.IsSuccessStatusCode)
                 {
-                    throw new WebException($"Http status {response.StatusCode}");
+                    throw new HttpRequestException($"Http status {response.StatusCode}");
                 } 
 
                 return await response.Content.ReadAsStringAsync();
